@@ -23,4 +23,4 @@ const mapStateToProps = (state, props) => ({
   dog: state.dogR.data,
 });
 
-export default connect (mapStateToProps)(DashBoard);
+export default connect (mapStateToProps)(Dashboard);

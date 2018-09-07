@@ -8,7 +8,7 @@ const initialState = {
   loading: false
 };
 
-export const catReducer = (state = initialState, action) => {
+export const dogReducer = (state = initialState, action) => {
   if(action.type === FETCH_DOG_SUCCESS){
     Object.assign({}, state, {
       data: action.dog,

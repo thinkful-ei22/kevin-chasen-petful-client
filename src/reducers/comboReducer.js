@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
-import {catReducer} from './foodsReducer';
-import {dogReducer} from './mapReducer';
+import {catReducer} from './cat-reducer';
+import {dogReducer} from './dog-reducer';
 
 export const rootReducer = combineReducers({
 
