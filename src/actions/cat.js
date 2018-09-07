@@ -32,13 +32,10 @@ export const adoptCat = () => dispatch =>  {
     }
   })
   .then(res => {
-    if(res.status(200)){
-      return 'Deleted';
-    }
-  })
-  .then(res => {
-    if(res === 'Deleted'){
-    dispatch(fetchCat());
+    console.log(res);
+    if(res.ok){
+      console.log('Good delete');
+      dispatch(fetchCat());
     }
   })
   .catch(e => {

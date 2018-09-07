@@ -30,13 +30,8 @@ export const adoptDog = () => dispatch =>  {
     }
   })
   .then(res => {
-    if(res.status(200)){
-      return 'Deleted';
-    }
-  })
-  .then(res => {
-    if(res === 'Deleted'){
-    dispatch(fetchDog());
+    if(res.ok){
+      dispatch(fetchDog());
     }
   })
   .catch(e => {
