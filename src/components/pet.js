@@ -1,24 +1,26 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
-export default function Pet (props){
+export function Pet (props){
+  console.log(props);
   return(
     <div>
       <section className='catToAdopt'>
-          <h1>{props.catToAdopt.name}</h1>
+          <h1>{props.cat.name}</h1>
           <img 
-          src={props.catToAdopt.imageURL} 
-          alt={props.catToAdopt.imageDescription}/>
+          src={props.cat.imageURL} 
+          alt={props.cat.imageDescription}/>
           <dl>
             <dt>Description</dt>
-            <dd>{props.catToAdopt.imageDescription}</dd>
+            <dd>{props.cat.imageDescription}</dd>
             <dt>Sex</dt>
-            <dd>{props.catToAdopt.sex}</dd>
+            <dd>{props.cat.sex}</dd>
             <dt>Age</dt>
-            <dd>{props.catToAdopt.age}</dd>
+            <dd>{props.cat.age}</dd>
             <dt>Breed</dt>
-            <dd>{props.catToAdopt.breed}</dd>
+            <dd>{props.cat.breed}</dd>
             <dt>Story</dt>
-            <dd>{props.catToAdopt.story}</dd>
+            <dd>{props.cat.story}</dd>
           </dl>
           <button 
           className='adoptCat'
@@ -27,21 +29,21 @@ export default function Pet (props){
           Adopt</button>
         </section>
         <section className='dogToAdopt'>
-          <h1>{props.dogToAdopt.name}</h1>
+          <h1>{props.dog.name}</h1>
             <img 
-            src={props.dogToAdopt.imageURL} 
-            alt={props.dogToAdopt.imageDescription}/>
+            src={props.dog.imageURL} 
+            alt={props.dog.imageDescription}/>
             <dl>
               <dt>Description</dt>
-              <dd>{props.dogToAdopt.imageDescription}</dd>
+              <dd>{props.dog.imageDescription}</dd>
               <dt>Sex</dt>
-              <dd>{props.dogToAdopt.sex}</dd>
+              <dd>{props.dog.sex}</dd>
               <dt>Age</dt>
-              <dd>{props.dogToAdopt.age}</dd>
+              <dd>{props.dog.age}</dd>
               <dt>Breed</dt>
-              <dd>{props.dogToAdopt.breed}</dd>
+              <dd>{props.dog.breed}</dd>
               <dt>Story</dt>
-              <dd>{props.dogToAdopt.story}</dd>
+              <dd>{props.dog.story}</dd>
             </dl>
             <button 
             className='adoptDog'
@@ -52,3 +54,10 @@ export default function Pet (props){
       </div>
   );
 }
+
+const mapStateToProps = (state, props) => ({
+  cat: state.catR.data, 
+  dog: state.dogR.data,
+});
+
+export default connect(mapStateToProps)(Pet);

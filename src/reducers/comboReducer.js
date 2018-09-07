@@ -5,6 +5,6 @@ import {dogReducer} from './dog-reducer';
 export const rootReducer = combineReducers({
 
   catR: catReducer,
-  dogR: dogReducer,
+  dogR: dogReducer
   
 });

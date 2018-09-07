@@ -5,20 +5,22 @@ export const fetchCatSuccess = cat => ({
   type: FETCH_CAT_SUCCESS,
   cat
 });
-
 export const fetchCat = () => dispatch =>  {
-  return fetch('localhost:8080/api/cat')
+  console.log('im making a get cat request to the backend');
+  return fetch(`${API_BASE_URL}/api/cat`)
   .then(res => {
+    console.log(res);
     if(res){
+      
       return res.json();
     }
   })
   .then(res => {
-    dispatch.fetchCatSuccess();
+    dispatch(fetchCatSuccess(res));
   })
   .catch(e => {
     console.log(e);
-  })
+  });
 };
 
 export const adoptCat = () => dispatch =>  {
@@ -36,10 +38,10 @@ export const adoptCat = () => dispatch =>  {
   })
   .then(res => {
     if(res === 'Deleted'){
-    dispatch.fetchCat();
+    dispatch(fetchCat());
     }
   })
   .catch(e => {
     console.log(e);
-  })
+  });
 };

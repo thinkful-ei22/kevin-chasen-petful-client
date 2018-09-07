@@ -3,14 +3,15 @@ import {
 } from '../actions';
 
 const initialState = {
-  data: null,
+  data: [],
   error: null,
   loading: false
 };
 
 export const catReducer = (state = initialState, action) => {
   if(action.type === FETCH_CAT_SUCCESS){
-    Object.assign({}, state, {
+    console.log(action.cat);
+    return Object.assign({}, state, {
       data: action.cat,
       loading: false,
       error: null

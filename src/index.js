@@ -7,6 +7,7 @@ import {rootReducer as comboReducer} from '../src/reducers/comboReducer';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 import {applyMiddleware, createStore} from 'redux';
+import logger from 'redux-logger';
 
 /* const catToAdopt = {
   imageURL:'https://assets3.thrillist.com/v1/image/2622128/size/tmg-slideshow_l.jpg', 
@@ -28,7 +29,7 @@ const dogToAdopt = {
   story: 'Owner Passed away'
 };
  */
-const store = createStore(comboReducer, applyMiddleware(thunk));
+const store = createStore(comboReducer, applyMiddleware(thunk, logger));
 
 ReactDOM.render(
   <Provider store={store}>

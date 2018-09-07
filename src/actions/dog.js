@@ -7,14 +7,14 @@ export const fetchDogSuccess = dog => ({
 });
 
 export const fetchDog = () => dispatch =>  {
-  return fetch('localhost:8080/api/dog')
+  return fetch(`${API_BASE_URL}/api/dog`)
   .then(res => {
     if(res){
       return res.json();
     }
   })
   .then(res => {
-    dispatch.fetchDogSuccess();
+    dispatch(fetchDogSuccess(res));
   })
   .catch(e => {
     console.log(e);
@@ -36,7 +36,7 @@ export const adoptDog = () => dispatch =>  {
   })
   .then(res => {
     if(res === 'Deleted'){
-    dispatch.fetchDog();
+    dispatch(fetchDog());
     }
   })
   .catch(e => {
