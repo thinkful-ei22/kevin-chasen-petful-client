@@ -13,6 +13,6 @@
 }
 
 .info {
-  display: inline-box;
-  border: 1 px solid black;
+  /* display: inline-box; */
+  border: 1px solid black;
 }

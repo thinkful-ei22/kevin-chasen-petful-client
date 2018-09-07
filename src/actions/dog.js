@@ -9,7 +9,8 @@ export const fetchDogSuccess = dog => ({
 export const fetchDog = () => dispatch =>  {
   return fetch(`${API_BASE_URL}/api/dog`)
   .then(res => {
-    if(res){
+    console.log(res);
+    if(res.ok){
       return res.json();
     }
   })
