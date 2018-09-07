@@ -1,0 +1,18 @@
+.catToAdopt{
+  display: inline-box;
+  float:left;
+}
+.dogToAdopt{
+  display: inline-box;
+  float:right;
+}
+
+.img{
+  width: 500px;
+  height: auto;
+}
+
+.info {
+  display: inline-box;
+  border: 1 px solid black;
+}
